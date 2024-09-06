@@ -1,4 +1,4 @@
-import { zodResolver } from "@hookform/resolvers/zod";
+/* import { zodResolver } from "@hookform/resolvers/zod";
 import { Trash } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -20,7 +20,7 @@ const formSchema = z.object({
   accountId: z.string(),
   categoryId: z.string().nullable().optional(),
   payee: z.string(),
-  amount: z.string(),
+  amount: z.number(),
   notes: z.string().nullable().optional(),
 });
 
@@ -108,3 +108,4 @@ export const TransactionForm = ({
     </Form>
   );
 };
+ */

@@ -1,4 +1,4 @@
-import { Loader2 } from "lucide-react";
+/* import { Loader2 } from "lucide-react";
 import { z } from "zod";
 
 import { useCreateAccount } from "@/features/accounts/api/use-create-accounts";
@@ -85,3 +85,4 @@ export const NewTransactionSheet = () => {
     </Sheet>
   );
 };
+ */

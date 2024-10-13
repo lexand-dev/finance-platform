@@ -1,13 +1,14 @@
 "use client";
 
+import { Loader2, Plus } from "lucide-react";
+
+import { useNewAccount } from "@/features/accounts/hooks/use-new-account";
 import { useBulkDeleteAccounts } from "@/features/accounts/api/use-bulk-delete-accounts";
 import { useGetAccounts } from "@/features/accounts/api/use-get-accounts";
-import { useNewAccount } from "@/features/accounts/hooks/use-new-account";
 
 import { DataTable } from "@/components/data-table";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Loader2, Plus } from "lucide-react";
 
 import { Skeleton } from "@/components/ui/skeleton";
 import { columns } from "./columns";
@@ -42,14 +43,14 @@ const AccountsPage = () => {
       <Card className="border-none drop-shadow-sm">
         <CardHeader className="gap-y-2 lg:flex-row lg:items-center lg:justify-between">
           <CardTitle className="test-xl line-clamp-1">Accounts page</CardTitle>
-          <Button size="sm" onClick={newAccount.onOpen}>
+          <Button onClick={newAccount.onOpen} size="sm">
             <Plus className="size-4 mr-2" />
             Add new
           </Button>
         </CardHeader>
         <CardContent>
           <DataTable
-            filterKey="email"
+            filterKey="name"
             columns={columns}
             data={accounts}
             onDelete={(row) => {

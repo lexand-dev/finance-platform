@@ -8,14 +8,12 @@ import { NewAccountSheet } from "@/features/accounts/components/new-account-shee
 import { EditCategorySheet } from "@/features/categories/components/edit-category-sheet";
 import { NewCategorySheet } from "@/features/categories/components/new-category-sheet";
 
-/* import { NewTransactionSheet } from "@/features/transactions/components/new-transaction-sheet";
- */
+import { NewTransactionSheet } from "@/features/transactions/components/new-transaction-sheet";
+
 export const SheetProvider = () => {
   const isMounted = useMountedState();
 
-  if (!isMounted()) {
-    return null;
-  }
+  if (!isMounted) return null;
 
   return (
     <>
@@ -25,8 +23,7 @@ export const SheetProvider = () => {
       <NewCategorySheet />
       <EditCategorySheet />
 
-      {/*   <NewTransactionSheet /> */}
-      {/* <EditTransactionSheet /> */}
+      <NewTransactionSheet />
     </>
   );
 };

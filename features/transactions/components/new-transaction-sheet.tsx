@@ -1,4 +1,4 @@
-/* import { Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { z } from "zod";
 
 import { useCreateAccount } from "@/features/accounts/api/use-create-accounts";
@@ -68,7 +68,7 @@ export const NewTransactionSheet = () => {
           <SheetDescription>Add new transaction</SheetDescription>
         </SheetHeader>
         {isLoading ? (
-          <div>
+          <div className="absolute inset-0 flex items-center justify-center">
             <Loader2 className="size-4 text-muted-foreground animate-spin" />
           </div>
         ) : (
@@ -85,4 +85,3 @@ export const NewTransactionSheet = () => {
     </Sheet>
   );
 };
- */

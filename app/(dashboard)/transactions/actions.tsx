@@ -1,7 +1,7 @@
 "use client";
 
-import { useDeleteAccount } from "@/features/accounts/api/use-delete-account";
-import { useOpenAccount } from "@/features/accounts/hooks/use-open-account";
+import { useDeleteTransaction } from "@/features/transactions/api/use-delete-transaction";
+import { useOpenTransaction } from "@/features/transactions/hooks/use-open-transaction";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -20,11 +20,11 @@ type Props = {
 export const Actions = ({ id }: Props) => {
   const [ConfirmDialog, confirm] = useConfirm(
     "Are you sure?",
-    "You are about to delete this account."
+    "You are about to delete this transaction."
   );
 
-  const deleteMutation = useDeleteAccount(id);
-  const { onOpen } = useOpenAccount();
+  const deleteMutation = useDeleteTransaction(id);
+  const { onOpen } = useOpenTransaction();
 
   const handleDelete = async () => {
     const ok = await confirm();

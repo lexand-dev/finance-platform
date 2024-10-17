@@ -74,15 +74,15 @@ export function DataTable<TData, TValue>({
     <div>
       <ConfirmationDialog />
       <div className="flex items-center py-4">
-        {/* <Input
-        id={filterKey}
+        <Input
+          id={filterKey}
           placeholder={`Filter ${filterKey}...`}
           value={(table.getColumn(filterKey)?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
-            table.getColumn("email")?.setFilterValue(event.target.value)
+            table.getColumn(filterKey)?.setFilterValue(event.target.value)
           }
           className="max-w-sm"
-        /> */}
+        />
         {table.getFilteredSelectedRowModel().rows.length > 0 && (
           <Button
             disabled={disabled}

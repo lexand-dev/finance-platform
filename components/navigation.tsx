@@ -1,12 +1,12 @@
 "use client";
 
-import { Menu } from "lucide-react";
-import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
+import { Menu } from "lucide-react";
 import { useMedia } from "react-use";
+import { usePathname, useRouter } from "next/navigation";
 
-import { NavButton } from "@/components/nav-button";
 import { Button } from "@/components/ui/button";
+import { NavButton } from "@/components/nav-button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const routes = [
@@ -37,7 +37,7 @@ export const Navigation = () => {
 
   const router = useRouter();
   const pathname = usePathname();
-  const isMobile = useMedia("(max-width: 1023px)", false);
+  const isMobile = useMedia("(max-width: 1024px)", false);
 
   const onClick = (href: string) => {
     router.push(href);
@@ -61,8 +61,9 @@ export const Navigation = () => {
             {routes.map((route) => (
               <Button
                 key={route.href}
-                variant={pathname === route.href ? "secondary" : "ghost"}
+                variant={route.href === pathname ? "secondary" : "ghost"}
                 onClick={() => onClick(route.href)}
+                className="w-full justify-start"
               >
                 {route.label}
               </Button>

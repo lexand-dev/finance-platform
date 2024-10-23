@@ -21,7 +21,8 @@ export default function Page() {
           </ClerkLoading>
         </div>
       </div>
-      <div className="h-full bg-blue-600 hidden lg:flex items-center justify-center">
+      <div className="h-full bg-gradient-to-b from-sky-600 to-sky-400 hidden lg:flex items-center justify-center gap-x-6">
+        <h2 className="text-2xl lg:text-5xl text-white font-bold">Finance</h2>
         <Image src="/logo.svg" height={100} width={100} alt="Logo" />
       </div>
     </div>
